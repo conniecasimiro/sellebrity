@@ -17,10 +17,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_21_160733) do
   create_table "bookings", force: :cascade do |t|
     t.date "booking_date"
     t.boolean "accepted"
+    t.bigint "user_id"
     t.bigint "celeb_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["celeb_id"], name: "index_bookings_on_celeb_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "celebs", force: :cascade do |t|
@@ -49,4 +51,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_21_160733) do
   end
 
   add_foreign_key "bookings", "celebs"
+  add_foreign_key "bookings", "users"
 end
