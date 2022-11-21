@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  get 'celeb/index'
-  get 'celeb/new'
-  get 'celeb/create'
-  root to: "pages#home"
+  devise_for :users
+  resources :celebs
+  resources :users
+  resources :bookings
+  root to: "celebs#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
