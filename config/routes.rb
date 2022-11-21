@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'celeb/index'
+  get 'celeb/new'
+  get 'celeb/create'
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
