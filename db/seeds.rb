@@ -6,6 +6,7 @@ require 'faker'
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
 User.destroy_all
 Celeb.destroy_all
 counter = 1
@@ -31,3 +32,4 @@ counter = 1
 
   celeb.save!
 end
+
