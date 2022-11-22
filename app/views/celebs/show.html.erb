@@ -2,7 +2,6 @@
 
 
 <div class="container text-center border">
-  <h1>Celebrity Show Page</h1>
   <div class="card text-center">
     <h2><%= @celeb.first_name %> <%= @celeb.last_name %></h2>
     <p><%= @celeb.service %></p>
@@ -11,8 +10,7 @@
     <p><%= @celeb.price %>  £/h</p>
 
   </div>
-<div class='bottom'>
- <button><%= link_to "Book this celebrity", new_celeb_booking_path(@celeb) %></button>
-  <%= render "layouts/footer"%>
-</div>
+  <div class='bottom'>
+   <button><%= link_to "Book this celebrity", new_celeb_booking_path(@celeb) %></button>
+  </div>
 </div>
