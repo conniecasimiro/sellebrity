@@ -6,6 +6,8 @@ require 'faker'
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+
 100.times do
   celeb = Celeb.new(
     first_name: Faker::Name.first_name,
