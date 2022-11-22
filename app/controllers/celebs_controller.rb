@@ -1,6 +1,9 @@
 class CelebsController < ApplicationController
   def index
     @celebs = Celeb.all
+    if params.present?
+      @celebs = Celeb.where(first_name: params["search"]["query"])
+    end
   end
 
   def show
