@@ -14,11 +14,11 @@ class BookingsController < ApplicationController
     @booking = Booking.new(bookings_params)
     @booking.celeb = @celeb
     @booking.save!
-    # if @booking.save
-    #   redirect_to celeb_path(@celeb)
-    # else
-    #   render "celebs/show", status: :unprocessable_entity
-    # end
+    #  if @booking.save
+    #    redirect_to celeb_path(@celeb)
+    #  else
+    #    render "celebs/show", status: :unprocessable_entity
+    #  end
   end
 
   private
