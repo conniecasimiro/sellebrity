@@ -1,6 +1,9 @@
 class CelebsController < ApplicationController
   def index
     @celebs = Celeb.all
+    if params["search"].present?
+      @celebs = Celeb.where(first_name: params["search"]["query"])
+    end
   end
 
   def show
@@ -13,6 +16,7 @@ class CelebsController < ApplicationController
 
   def create
     @celeb = Celeb.new(celeb_params)
+    @celeb.user = current_user
     if @celeb.save
       redirect_to celeb_path(@celeb)
     else
@@ -35,6 +39,6 @@ class CelebsController < ApplicationController
   private
 
   def celeb_params
-    params.require(:celeb).permit(:first_name, :last_name, :service, :bio, :photo_url, :price, :user_id)
+    params.require(:celeb).permit(:first_name, :last_name, :service, :bio, :photo_url, :price)
   end
 end
