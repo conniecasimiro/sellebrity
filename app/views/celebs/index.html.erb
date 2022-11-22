@@ -1,8 +1,7 @@
 
-
 <%= render "layouts/navbar"%>
   <div class="container mt-4 mb-3">
-    <h1>Celebrities</h1>
+    <h1 class="m-5 text-center">SELLEBRITIES</h1>
     <div class="cards">
       <% @celebs.each do |celeb| %>
         <%= link_to celeb_path(celeb), style: "text-decoration: none; color: black;" do %>
