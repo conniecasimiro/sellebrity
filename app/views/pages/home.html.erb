@@ -1,6 +1,6 @@
 
 <%= render "layouts/navbar"%>
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.usmagazine.com/wp-content/uploads/2022/02/Everything-to-Know-About-the-2022-Oscars.jpg?w=1600&quality=86&strip=all);">
+  <div class="banner mb-4" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.usmagazine.com/wp-content/uploads/2022/02/Everything-to-Know-About-the-2022-Oscars.jpg?w=1600&quality=86&strip=all);">
     <div class="container">
       <h1>Selebrity</h1>
       <p>Spend time with your favorite celbrities... </p>
@@ -14,13 +14,24 @@
       <% end %>
     </div>
   </div>
-  <div class="container">
-    <h1>All celebrities</h1>
-    <% @featured.each do |celeb| %>
-    <img src="<%celeb.photo_url%>" width="500" height="600">
-    <p><%= celeb.first_name %> <%= celeb.last_name %></p>
-    <p><%= celeb.service %></p>
-    <p><%= celeb.price %>£/h</p>
-    <% end %>
+  <div class="container position-relative">
+    <div class="cards">
+      <% @featured.each do |celeb| %>
+          <%= link_to celeb_path(celeb), style: "text-decoration: none; color: black;" do %>
+            <div class="card-product" >
+              <img src="<%=celeb.photo_url%>" width="500" height="600"/>
+              <div class="card-product-infos">
+                <h2><%= celeb.first_name %> <%= celeb.last_name %></h2>
+                <div class="d-flex justify-content-between">
+                  <p ><%= celeb.service %></p>
+                  <p><strong><%= celeb.price %></strong>£/h</p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+      <% end %>
+    </div>
+    <div class="position-absolute end-0">
+      <%= link_to "All Celebrities", celebs_path, class: "btn btn-flat mt-4"%>
+    </div>
   </div>
-<%= render "layouts/footer"%>
