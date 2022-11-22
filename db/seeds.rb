@@ -211,7 +211,7 @@ Celeb.create!(
   last_name:  "Gomez",
   service:  "Singer, Actor, Fashion designer",
   bio:  "Selena Marie Gomez (born July 22, 1992) is an American singer, actress and film producer. Gomez began her acting career on the children's television series Barney & Friends (2002–2004). As a teenager, she rose to prominence for starring as Alex Russo on the Disney Channel television series Wizards of Waverly Place (2007–2012). Alongside her television career, Gomez appeared in the films Another Cinderella Story (2008), Princess Protection Program (2009), Wizards of Waverly Place: The Movie (2009), Ramona and Beezus (2010), Monte Carlo (2011), Spring Breakers (2012), Neighbors 2: Sorority Rising (2016), The Dead Don't Die (2019), and A Rainy Day in New York (2019). She also voiced the character Mavis in the Hotel Transylvania film franchise (2012–2022).",
-  photo_url:  "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Brad_Pitt_2019_by_Glenn_Francis.jpg/440px-Brad_Pitt_2019_by_Glenn_Francis.jpg",
+  photo_url:  "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Selena_Gomez_at_White_House.jpg/440px-Selena_Gomez_at_White_House.jpg",
   price:  rand(250..50000),
   user_id: user4.id
 )
