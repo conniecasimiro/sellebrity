@@ -1,6 +1,9 @@
 class CelebsController < ApplicationController
   def index
     @celebs = Celeb.all
+    if params.present?
+      @celebs = Celeb.where(first_name: params["search"]["query"])
+    end
   end
 
   def show
@@ -35,6 +38,6 @@ class CelebsController < ApplicationController
   private
 
   def celeb_params
-    params.require(:celeb).permit(:first_name, :last_name, :service, :bio, :photo_url, :price)
+    params.require(:celeb).permit(:first_name, :last_name, :service, :bio, :photo_url, :price, :user_id)
   end
 end

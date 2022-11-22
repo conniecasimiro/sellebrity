@@ -2,20 +2,21 @@
 
 <%= render "layouts/navbar"%>
   <div class="container ">
-    <h1>All celebrities</h1>
+    <h1>Celebrities</h1>
     <div class="cards">
       <% @celebs.each do |celeb| %>
-      <div class="card-product">
-        <img src="<%=celeb.photo_url%>" width="500" height="600"/>
-        <div class="card-product-infos">
-          <h2><%= celeb.first_name %> <%= celeb.last_name %></h2>
-          <div class="d-flex justify-content-between">
-            <p><%= celeb.service %></p>
-            <p><strong><%= celeb.price %></strong>£/h</p>
+        <%= link_to celeb_path(celeb), style: "text-decoration: none; color: black;" do %>
+          <div class="card-product" >
+            <img src="<%=celeb.photo_url%>" width="500" height="600"/>
+            <div class="card-product-infos">
+              <h2><%= celeb.first_name %> <%= celeb.last_name %></h2>
+              <div class="d-flex justify-content-between">
+                <p ><%= celeb.service %></p>
+                <p><strong><%= celeb.price %></strong>£/h</p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        <% end %>
       <% end %>
     </div>
   </div>
-<%= render "layouts/footer"%>
