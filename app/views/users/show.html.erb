@@ -1,1 +1,15 @@
-<h1>Connected!</h1>
+<%= render "layouts/navbar"%>
+
+
+<div class="container text-center border">
+  <h1>User Profile!</h1>
+  <div class="card text-center">
+    <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+    <p>Imagine a lovely bio</p>
+  </div>
+</div>
+
+<%# <button><%= link_to "Book this celebrity", new_booking_path %>
+<%# </button> %>
+
+<%= render "layouts/footer"%>
