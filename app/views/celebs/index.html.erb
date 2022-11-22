@@ -1,10 +1,13 @@
 
-<div class="container">
-  <h1>All celebrities</h1>
-  <% @celebs.each do |celeb| %>
-  <img src="<%celeb.photo_url%>" width="500" height="600">
-  <p><%= celeb.first_name %> <%= celeb.last_name %></p>
-  <p><%= celeb.service %></p>
-  <p><%= celeb.price %>£/h</p>
-  <% end %>
-</div>
+
+<%= render "layouts/navbar"%>
+  <div class="container">
+    <h1>All celebrities</h1>
+    <% @celebs.each do |celeb| %>
+    <img src="<%celeb.photo_url%>" width="500" height="600">
+    <p><%= celeb.first_name %> <%= celeb.last_name %></p>
+    <p><%= celeb.service %></p>
+    <p><%= celeb.price %>£/h</p>
+    <% end %>
+  </div>
+<%= render "layouts/footer"%>
