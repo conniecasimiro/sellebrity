@@ -16,7 +16,8 @@ counter = 1
       first_name: Faker::Name.first_name,
       last_name:  Faker::Name.last_name,
       email: Faker::Internet.email,
-      password: 123456
+      password: 123456,
+      bio: Faker::TvShows::Community.quotes
 
   )
   user.save!
@@ -32,4 +33,3 @@ counter = 1
 
   celeb.save!
 end
-
