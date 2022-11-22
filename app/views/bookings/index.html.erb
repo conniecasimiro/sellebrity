@@ -1,0 +1,5 @@
+<h1>Bookings for this Celebrity!</h1>
+<% @bookings.each do |booking|%>
+<li><%= booking.user_id %></li>
+<li><%= booking.celeb_id %></li>
+<% end %>
