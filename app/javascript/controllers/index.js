@@ -4,5 +4,8 @@
 
 import { application } from "./application"
 
+import BioCssController from "./bio_css_controller"
+application.register("bio-css", BioCssController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)

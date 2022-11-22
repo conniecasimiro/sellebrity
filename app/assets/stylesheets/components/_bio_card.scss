@@ -1,0 +1,29 @@
+
+.bio-card {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 5vh auto;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 75vh;
+}
+
+.inner-card {
+  margin: 20px 20px;
+  height: 100%;
+}
+
+.bio-image {
+  width: 25%;
+  object-fit: cover;
+}
+
+.bio-text {
+  width: 60%;
+}
+
+.inner-row {
+  display: flex;
+  height: 80%;
+  gap: 45px;
+}

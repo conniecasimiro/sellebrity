@@ -1,15 +1,21 @@
 <%= render "layouts/navbar"%>
 
-
-<div class="container text-center border">
-  <h1>Celebrity Show Page</h1>
-  <div class="card text-center">
-    <h2><%= @celeb.first_name %> <%= @celeb.last_name %></h2>
-    <p><%= @celeb.service %></p>
-    <p><%= @celeb.bio %></p>
-    <img class="card-img-top" src="<%= @celeb.photo_url %>" alt="Card image cap">
-    <p><%= @celeb.price %>  £/h</p>
-
+<div class="container">
+  <div class="bio-card">
+    <div class="inner-card">
+      <h1><%= @celeb.first_name %> <%= @celeb.last_name %></h1>
+        <div class="inner-row">
+          <img class="bio-image" src="<%= @celeb.photo_url %>" alt="Card image cap">
+            <div class="bio-text">
+              <h2>Bio</h2>
+              <p><%= @celeb.bio %></p>
+              <h2>Service</h2>
+              <p><%= @celeb.service %></p>
+              <h2>Price</h2>
+              <p><%= @celeb.price %>£/h</p>
+            </div>
+        </div>
+    </div>
   </div>
 </div>
 
