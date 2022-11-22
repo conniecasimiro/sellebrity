@@ -1,2 +1,11 @@
 <%= render "layouts/navbar"%>
 <h1>Connected!</h1>
+<%= simple_form_for(@celeb) do |f| %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :service %>
+  <%= f.input :bio %>
+  <%= f.input :photo_url %>
+  <%= f.input :price %>
+  <%= f.submit %>
+<% end %>
