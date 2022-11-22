@@ -20,6 +20,12 @@ class CelebsController < ApplicationController
     end
   end
 
+  def update
+    @celeb = Celeb.find(params[:id])
+    @celeb.update(celebs_params)
+    redirect_to celeb_path(@celebs)
+  end
+
   # def destroy
   #   @celeb = Celeb.find(params[:id])
   #   @celeb.destroy
