@@ -2,8 +2,8 @@
 <%= render "layouts/navbar"%>
   <div class="banner mb-4" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.usmagazine.com/wp-content/uploads/2022/02/Everything-to-Know-About-the-2022-Oscars.jpg?w=1600&quality=86&strip=all);">
     <div class="container">
-      <h1>Selebrity</h1>
-      <p>Spend time with your favorite celbrities... </p>
+      <h1>Sellebrity</h1>
+      <p>Spend time with your favorite celebrities... </p>
       <%= simple_form_for :search, url: celebs_path, method: :get,  html: { class: 'form-inline' } do |f| %>
         <div class="search-form-control form-group">
           <input class="form-control string required" type="text" name="search[query]" id="search_query" />
