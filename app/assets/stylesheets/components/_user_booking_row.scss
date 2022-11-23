@@ -1,0 +1,41 @@
+.rows {
+  display: flex;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  gap: 15px;
+  margin-bottom: 20px;
+  height: 353px;
+}
+
+.requests {
+  display: flex;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  gap: 0px 10px;
+  overflow: auto;
+  width: 98%;
+  height: 15%;
+  border-radius: 5px;
+  background-color: rgb(217, 217, 217);
+  margin-right: 13px;
+  margin-bottom: 13px;
+  margin-top: 13px;
+  border-radius: 5px;
+  justify-content: space-between;
+  align-items: center;
+  p {
+    margin-bottom: 0px;
+    margin-left: 13px;
+  }
+  a {
+    margin-right: 13px;
+  }
+}
+.requests>*:first-child {
+  justify-content: flex-start;
+}
+.requests>*:second-child {
+  justify-content: flex-start;
+}
+.column {
+  width: 95%;
+  overflow: auto;
+}
