@@ -6,18 +6,20 @@
       <h1><%= @celeb.first_name %> <%= @celeb.last_name %></h1>
         <div class="inner-row">
           <img class="bio-image" src="<%= @celeb.photo_url %>" alt="Card image cap">
-            <div class="bio-text">
+            <div class="bio-text position-relative">
               <h2>Bio</h2>
               <p><%= @celeb.bio %></p>
               <h2>Service</h2>
               <p><%= @celeb.service %></p>
               <h2>Price</h2>
-              <p><%= @celeb.price %>£</p>
+              <p><%= @celeb.price %>£/h</p>
+              <a><%= link_to "Book this celebrity", new_celeb_booking_path(@celeb), class: "btn btn-flat bottom-0 end-0 position-absolute" %>
+              </a>
             </div>
+
         </div>
     </div>
   </div>
 </div>
-
 
 <%= render "layouts/footer"%>

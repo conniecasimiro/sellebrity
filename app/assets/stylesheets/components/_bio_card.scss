@@ -6,6 +6,7 @@
   padding-left: 15px;
   padding-right: 15px;
   height: 75vh;
+
 }
 
 .inner-card {
@@ -19,11 +20,13 @@
 }
 
 .bio-text {
-  width: 60%;
+  width: 75%;
+  max-height: 100%;
 }
 
 .inner-row {
   display: flex;
   height: 80%;
   gap: 45px;
+  overflow: auto;
 }
