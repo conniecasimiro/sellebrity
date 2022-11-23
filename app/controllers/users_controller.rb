@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   def celebs
     @user = User.find(params[:id])
     @celebs = Celeb.all.where(@user)
-   end
+  end
 
   def bookings
     @bookings = Booking.where(user_id: current_user)
