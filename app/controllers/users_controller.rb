@@ -12,4 +12,10 @@ class UsersController < ApplicationController
   def bookings
     @bookings = Booking.where(user_id: current_user)
   end
+
+  def decline
+  end
+
+  def accept
+  end
 end

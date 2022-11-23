@@ -1,28 +1,35 @@
 <%= render "layouts/navbar"%>
-  <div class="container mt-4 mb-3">
-    <h1 class="m-5 text-center">My SELLEBRITIES</h1>
-    <div class="cards">
-      <% @celebs.each do |celeb| %>
-        <%= link_to celeb_path(celeb), style: "text-decoration: none; color: black;" do %>
-          <div class="card-product" >
-            <img src="<%=celeb.photo_url%>" width="500" height="600"/>
-            <div class="card-product-infos">
-              <h2><%= celeb.first_name %> <%= celeb.last_name %></h2>
-              <div class="d-flex justify-content-between">
-                <p ><%= celeb.service %></p>
-                <p><strong><%= celeb.price %></strong>£/h</p>
-              </div>
+<div class="container mt-4 mb-3">
+  <h1 class="m-5 text-center">My SELLEBRITIES</h1>
+    <% @celebs.each do |celeb| %>
+    <div class="rows bg-white">
+      <%= link_to celeb_path(celeb), style: "text-decoration: none; color: black;" do %>
+      <div class="card-product" >
+        <img src="<%=celeb.photo_url%>" width="500" height="600"/>
+          <div class="card-product-infos">
+            <h2><%= celeb.first_name %> <%= celeb.last_name %></h2>
+            <div class="d-flex justify-content-between">
+              <p ><%= celeb.service %></p>
+              <p><strong><%= celeb.price %></strong>£/h</p>
             </div>
           </div>
-          <div class="requests">
-            <% bookings = Booking.where(celeb: celeb)  %>
-            <% bookings.each do |booking| %>
+      </div>
+      <% end %>
+      <% bookings = Booking.where(celeb: celeb)  %>
+        <div class="column">
+          <% bookings.each do |booking| %>
+            <div class="requests">
               <p><%= booking.booking_date %></p>
               <p>by <%= booking.user.first_name %> <%= booking.user.last_name %></p>
-              <p><%= booking.accepted %></p>
-            <% end %>
-          </div>
-        <% end %>
-      <% end %>
+              <% if booking.accepted = "false" %>
+                <a><%= link_to "Accept", users_celebs_path(), class: "btn btn-flat end-0" %></a>
+                <a><%= link_to "Decline", users_celebs_path(), class: "btn btn-flat bg-secondary end-0" %></a>
+              <% else %>
+                <p><%= booking.booking_date %></p>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
     </div>
-  </div>
+  <% end %>
+</div>
