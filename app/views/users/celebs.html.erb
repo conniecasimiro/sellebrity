@@ -14,10 +14,15 @@
               </div>
             </div>
           </div>
+          <div class="requests">
+            <% bookings = Booking.where(celeb: celeb)  %>
+            <% bookings.each do |booking| %>
+              <p><%= booking.booking_date %></p>
+              <p>by <%= booking.user.first_name %> <%= booking.user.last_name %></p>
+              <p><%= booking.accepted %></p>
+            <% end %>
+          </div>
         <% end %>
       <% end %>
-    </div>
-    <div class="requests">
-      <% @celebs.each do |celeb| %>
     </div>
   </div>
