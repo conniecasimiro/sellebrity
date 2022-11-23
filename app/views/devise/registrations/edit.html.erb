@@ -17,6 +17,13 @@
       </div>
 
       <div class="card p-3 mb-3">
+          <h2>Update Name</h2>
+          <%= f.input :first_name, required: false, autofocus: true %>
+          <%= f.input :last_name, required: false, autofocus: true %>
+          <%= f.input :bio, required: false, autofocus: true %>
+      </div>
+
+      <div class="card p-3 mb-3">
           <h2>Update Password</h2>
             <p>Input new password</p>
           <%= f.input :password,
@@ -27,13 +34,6 @@
                       required: false,
                       input_html: { autocomplete: "new-password" } %>
 
-      </div>
-
-      <div class="card p-3 mb-3">
-          <h2>Update Name</h2>
-          <%= f.input :first_name, required: false, autofocus: true %>
-          <%= f.input :last_name, required: false, autofocus: true %>
-          <%= f.input :bio, required: false, autofocus: true %>
       </div>
 
       <div class="card p-3 mb-3">
