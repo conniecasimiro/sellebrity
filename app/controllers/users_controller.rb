@@ -3,11 +3,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-
   def celebs
-    @user = User.find(params[:id])
-    @celebs = Celeb.all.where(@user)
-   end
+    # @user = User.find(params[:id])
+    @celebs = Celeb.where(user_id: current_user)
+    @bookings = Booking.where(celeb_id: @celebs)
+  end
 
   def bookings
     @bookings = Booking.where(user_id: current_user)
