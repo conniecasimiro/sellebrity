@@ -1,9 +1,19 @@
-<div>
-  <% @bookings.each do |booking| %>
-  <ul>
-    <li><%= booking.celeb_id %></li>
-    <li><%= booking.booking_date %></li>
-    <li><%= booking.celeb.first_name %></li>
-  </ul>
-  <% end %>
-</div>
+
+<%= render "layouts/navbar"%>
+  <div class="container mt-4 mb-3">
+    <h1 class="m-5 text-center">My Bookings</h1>
+    <div class="cards">
+      <% @bookings.each do |booking| %>
+          <div class="card-product" >
+            <img src="<%=booking.celeb.photo_url%>" width="500" height="600"/>
+            <div class="card-product-infos">
+              <h2><%= booking.celeb.first_name %> <%= booking.celeb.last_name %></h2>
+              <div class="d-flex justify-content-between">
+                <h2>Booking date:  <%= booking.booking_date %></h2>
+              </div>
+            </div>
+          </div>
+        <% end %>
+    </div>
+  </div>
+<%= render "layouts/footer"%>
