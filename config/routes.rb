@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   get '/mybookings', to: 'users#bookings'
   resources :users, only: [:show]
   root to: "pages#home"
+  get "users/:id/celebs", to: "users#celebs"
+
 end
