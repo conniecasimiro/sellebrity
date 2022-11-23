@@ -1,1 +1,9 @@
-<%= @bookings %>
+<div>
+  <% @bookings.each do |booking| %>
+  <ul>
+    <li><%= booking.celeb_id %></li>
+    <li><%= booking.booking_date %></li>
+    <li><%= booking.celeb.first_name %></li>
+  </ul>
+  <% end %>
+</div>
