@@ -1,6 +1,8 @@
-<%= render "layouts/navbar"%>
 <div class="container mt-4 mb-3">
-  <h1 class="m-5 text-center">My SELLEBRITIES</h1>
+  <div class="d-flex justify-content-between align-items-center">
+    <h1 class="m-5">My SELLEBRITIES</h1>
+    <a><%= link_to "New Celebrity", new_celeb_path, class: "btn btn-flat"%></a>
+  </div>
     <% @celebs.each do |celeb| %>
     <div class="rows bg-white">
       <%= link_to celeb_path(celeb), style: "text-decoration: none; color: black;" do %>
