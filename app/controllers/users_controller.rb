@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   end
 
   def celebs
-    # @user = User.find(params[:id])
     @celebs = Celeb.where(user_id: current_user)
     @bookings = Booking.where(celeb_id: @celebs)
   end

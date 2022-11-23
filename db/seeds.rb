@@ -242,6 +242,16 @@ Celeb.create!(
   service:  "Tiktoker",
   bio:  "Charli Grace D'Amelio (born May 1, 2004) is an American social media personality. She was a competitive dancer for over 10 years before starting her social media career in 2019, when she started posting dance videos on the video-sharing platform TikTok. She quickly amassed a large following and subsequently became the most-followed creator on the platform in March 2020 until she was surpassed by Khaby Lame in July 2022.",
   photo_url:  "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Charli_D%27Amelio_3.jpg/440px-Charli_D%27Amelio_3.jpg",
+  price:  rand(250..500),
+  user_id: user4.id
+)
+
+Celeb.create!(
+  first_name: "Drake",
+  last_name:  "Canyoudosumfame",
+  service:  "Singer, composer, and actor",
+  bio:  "Drake CanYouDoSumFaMe is a Canadian rapper, singer, and actor. An influential figure in contemporary popular music, Drake has been credited for popularizing singing and R&B sensibilities in hip hop.",
+  photo_url:  "https://i.pinimg.com/550x/f3/bb/a2/f3bba2f30820a5f02756f15e10704bb4.jpg",
   price:  rand(250..50000),
   user_id: user4.id
 )
