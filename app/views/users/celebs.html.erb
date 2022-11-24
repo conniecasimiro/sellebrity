@@ -3,6 +3,7 @@
     <h1 class="m-5">My SELLEBRITIES</h1>
     <a><%= link_to "New Celebrity", new_celeb_path, class: "btn btn-flat"%></a>
   </div>
+
   <% if @celebs.present? %>
     <% @celebs.each do |celeb| %>
     <div class="rows bg-white">
@@ -17,6 +18,9 @@
           </div>
         </div>
       </div>
+      <% end %>
+      <%= link_to celeb_path(celeb), data: {turbo_method: :delete} do %>
+            <i class="fa-solid fa-trash relative"></i>
       <% end %>
       <% bookings = Booking.where(celeb: celeb)  %>
         <div class="column">

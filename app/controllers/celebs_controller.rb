@@ -41,11 +41,11 @@ class CelebsController < ApplicationController
     redirect_to celeb_path(@celebs)
   end
 
-  # def destroy
-  #   @celeb = Celeb.find(params[:id])
-  #   @celeb.destroy
-  #   redirect_to celebs_path, status: :see_other
-  # end
+  def destroy
+    @celeb = Celeb.find(params[:id])
+    @celeb.destroy
+    redirect_to users_celebs_path, status: :see_other
+  end
 
   private
 
