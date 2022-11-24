@@ -1,7 +1,9 @@
-  <div class="banner mb-4" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.usmagazine.com/wp-content/uploads/2022/02/Everything-to-Know-About-the-2022-Oscars.jpg?w=1600&quality=86&strip=all);">
+  <div class="banner mb-3" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.usmagazine.com/wp-content/uploads/2022/02/Everything-to-Know-About-the-2022-Oscars.jpg?w=1600&quality=86&strip=all);">
     <div class="container">
-      <h1>SELLEBRITY</h1>
-      <p>Spend time with your favorite celebrities... </p>
+      <%= link_to celebs_path, style: "text-decoration: none;" do %>
+        <h1>SELLEBRITY</h1>
+      <% end %>
+      <p>Make your dreams come true. Book time with your favorite celebrities. </p>
       <%= simple_form_for :search, url: celebs_path, method: :get,  html: { class: 'form-inline' } do |f| %>
         <div class="search-form-control form-group">
           <input class="form-control string required" type="text" name="search[query]" id="search_query" />
@@ -12,8 +14,22 @@
       <% end %>
     </div>
   </div>
-  <div class="container position-relative">
-    <div class="cards">
+  <div class="container position-relative" id="homepagecelebs">
+    <div id="carouselExampleInterval" class="carousel slide mt-5" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active text-center" data-bs-interval="4000">
+            <h4 style="color:grey;"><i>Loved meeting Taylor Swift! She brought her cat meridith and she was so cute.</i></h4>
+          </div>
+          <div class="carousel-item text-center" data-bs-interval="4000">
+            <h4 style="color:grey;"><i>Ronaldo and I had a create time. He showed me some football tricks.</i></h4>
+          </div>
+          <div class="carousel-item text-center">
+            <h4 style="color:grey;"><i>I had an amazing time with Ye. He made some anti-semitic comment but its fine im rasist too.</i></h4>
+          </div>
+        </div>
+    </div>
+      <h2 class="mb-3 mt-4">Popular Celebrities</h2>
+    <div class="cards d-flex justify-content-between align-items-center">
       <% @featured.each do |celeb| %>
           <%= link_to celeb_path(celeb), style: "text-decoration: none; color: black;" do %>
             <div class="card-product" >
@@ -29,4 +45,5 @@
           <% end %>
       <% end %>
     </div>
+    <a><%= link_to "All celebrities", celebs_path, class: "btn btn-flat position-absolute end-0 my-4" %></a>
   </div>
