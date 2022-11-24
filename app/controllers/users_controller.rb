@@ -24,4 +24,9 @@ class UsersController < ApplicationController
     booking.save
     redirect_to users_celebs_path, status: :see_other
   end
+
+ def destroy
+
+ end
+
 end

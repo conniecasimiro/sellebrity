@@ -10,5 +10,4 @@ Rails.application.routes.draw do
   post "users/celebs/:id", to: "users#accept", as: :accept
   delete "users/celebs/:id", to: "users#decline", as: :decline
   resources :users, only: [:show]
-
 end

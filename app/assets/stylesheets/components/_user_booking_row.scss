@@ -1,11 +1,16 @@
 .rows {
   display: flex;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  gap: 15px;
   margin-bottom: 20px;
-  height: 353px;
-}
 
+    position: relative;
+
+}
+.relative {
+  position: absolute;
+  top: 18px;
+  left: 237px;
+}
 .requests {
   display: flex;
   width: 100%;
@@ -71,6 +76,7 @@
   margin-right: 13px;
   margin-top: 13px;
   margin-bottom: 13px;
+  margin-left: 13px;
 }
 .no-celebs{
   height: 40vh;
