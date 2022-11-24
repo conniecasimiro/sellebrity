@@ -1,0 +1,17 @@
+#body {
+  display:flex;
+  flex-direction: column;
+}
+
+#instagram {
+  color: black;
+  font-size: 50px;
+  bottom: 500px;
+  height: 58px;
+  width: 43px;
+}
+
+
+#instagram:hover {
+  color: gold;
+}
