@@ -8,39 +8,45 @@
       <%= link_to celeb_path(celeb), style: "text-decoration: none; color: black;" do %>
       <div class="card-product" >
         <img src="<%=celeb.photo_url%>" width="500" height="600"/>
-          <div class="card-product-infos">
-            <h2><%= celeb.first_name %> <%= celeb.last_name %></h2>
-            <div class="d-flex justify-content-between">
-              <p ><%= celeb.service %></p>
-              <p><strong><%= celeb.price %></strong>£/h</p>
-            </div>
+        <div class="card-product-infos">
+          <h2><%= celeb.first_name %> <%= celeb.last_name %></h2>
+          <div class="d-flex justify-content-between">
+            <p ><%= celeb.service %></p>
+            <p><strong><%= celeb.price %></strong>£/h</p>
           </div>
+        </div>
       </div>
       <% end %>
       <% bookings = Booking.where(celeb: celeb)  %>
         <div class="column">
-          <% bookings.each do |booking| %>
-            <div class="booking">
-              <div class="requests rounded-top">
-                <div class="request-start">
-                  <p>From: <%=booking.user.first_name.capitalize%></p>
-                  <p>On: <%=booking.booking_date.strftime("%m/%d/%Y") %> At: <%=booking.booking_date.strftime("%I:%M%p") %> For:<%=booking.duration%> hours</p>
+          <% unless bookings == [] %>
+            <% bookings.each do |booking| %>
+                <div class="booking">
+                  <div class="requests rounded-top">
+                    <div class="request-start">
+                      <p>From: <%=booking.user.first_name.capitalize%></p>
+                      <p>On: <%=booking.booking_date.strftime("%m/%d/%Y") %> At: <%=booking.booking_date.strftime("%I:%M%p") %> For:<%=booking.duration%> hours</p>
+                    </div>
+                    <div class="request-end">
+                      <% unless booking.accepted %>
+                        <a><%= link_to "Accept", accept_path(booking), data: {turbo_method: :post}, class: "btn btn-flat end-0" %></a>
+                        <a><%= link_to "Decline", decline_path(booking), data: {turbo_method: :delete},class: "btn btn-flat bg-secondary end-0" %></a>
+                      <% else %>
+                        <p> <strong>Booking Accepted!</strong></p>
+                      <% end %>
+                    </div>
+                  </div>
+                  <div class="description rounded-bottom">
+                    <p>Description: <%=booking.description%></p>
+                  </div>
                 </div>
-                <div class="request-end">
-                  <% unless booking.accepted %>
-                    <a><%= link_to "Accept", accept_path(booking), data: {turbo_method: :post}, class: "btn btn-flat end-0" %></a>
-                    <a><%= link_to "Decline", decline_path(booking), data: {turbo_method: :delete},class: "btn btn-flat bg-secondary end-0" %></a>
-                  <% else %>
-                    <p> <strong>Booking Accepted!</strong></p>
-                  <% end %>
-                </div>
-              </div>
-              <div class="description rounded-bottom">
-                <P>Description: <%=booking.description%></P>
-              </div>
+            <% end %>
+          <% else %>
+            <div class="unpopular">
+              <h1 class="no-bookings"><%="#{celeb.first_name} Just isn't very popular.."%></h1>
             </div>
           <% end %>
         </div>
-    </div>
+      </div>
   <% end %>
 </div>

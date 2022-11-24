@@ -58,3 +58,17 @@
   overflow: auto;
   flex-direction: column;
 }
+.no-bookings {
+  display: flex;
+  color: white;
+  align-items: center;
+}
+.unpopular{
+  display: flex;
+  height: 92%;
+  background-color: black;
+  justify-content: center;
+  margin-right: 13px;
+  margin-top: 13px;
+  margin-bottom: 13px;
+}
