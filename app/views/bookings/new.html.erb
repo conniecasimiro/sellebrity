@@ -1,7 +1,33 @@
 <div class="container mt-5">
   <h1>New Booking</h1>
-  <%= simple_form_for [@celeb, @booking] do |f| %>
-    <%= f.input :booking_date %>
+
+<div class="container">
+  <div class="bio-card">
+    <div class="inner-card">
+      <h1><%= @celeb.first_name %> <%= @celeb.last_name %></h1>
+        <div class="inner-row">
+          <img class="bio-image" src="<%= @celeb.photo_url %>" alt="Card image cap">
+            <div class="bio-text position-relative">
+             <%= simple_form_for [@celeb, @booking] do |f| %>
+    <%= f.input :booking_date, as: :datetime, html5: true %>
+    <%= f.input :accepted, as: :integer %>
+    <%= f.input :accepted, wrapper: :custom_boolean_switch %>
+    <h3>Price</h3>
+              <p><strong> <%= @celeb.price %></strong>  £/h</p>
     <%= f.submit class: "btn btn-flat" %>
   <% end %>
+
+
+            </div>
+
+        </div>
+    </div>
+  </div>
 </div>
+
+
+
+
+
+duration integer
+description
