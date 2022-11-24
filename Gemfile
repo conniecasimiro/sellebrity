@@ -77,4 +77,8 @@ group :test do
 end
 
 gem "devise"
+
 gem 'simple-form-datepicker', '~> 0.1.3'
+
+gem "pg_search"
+
