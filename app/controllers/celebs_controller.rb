@@ -2,7 +2,7 @@ class CelebsController < ApplicationController
   def index
     @celebs = Celeb.all
     if params["search"].present?
-      @celebs = Celeb.where(first_name: params["search"]["query"])
+      @celebs = Celeb.search_by_name_and_service(params["search"]["query"])
     end
   end
 
