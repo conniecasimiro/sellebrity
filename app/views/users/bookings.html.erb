@@ -1,16 +1,19 @@
-  <div class="container mt-4 mb-3">
-    <h1 class="m-5 text-center">My Bookings</h1>
-    <div class="cards">
-      <% @bookings.each do |booking| %>
-          <div class="card-product" >
-            <img src="<%=booking.celeb.photo_url%>" width="500" height="600"/>
-            <div class="card-product-infos">
-              <h2><%= booking.celeb.first_name %> <%= booking.celeb.last_name %></h2>
-              <div class="d-flex justify-content-between">
-                <h2>Booking date:  <%= booking.booking_date %></h2>
-              </div>
-            </div>
+<div class="container">
+  <div class="container-booking">
+  <h1 class="m-5 text-center">My Bookings</h1>
+    <% @bookings.each do |booking| %>
+      <div class="cards-booking">
+        <div class="card-info-booking">
+          <img src=<%=booking.celeb.photo_url%>>
+          <div class="cards-book">
+            <h2><%= booking.celeb.first_name %> <%= booking.celeb.last_name %></h2>
+            <p> Booking date: <%= booking.booking_date %></p>
+            <p> Booking duration: <strong><%= booking.duration %></strong> hours</p>
+            <p> Booking description: <%= booking.description %></p>
           </div>
-        <% end %>
-    </div>
+        </div>
+        <a id="ed-button" href="#" class="btn btn-primary">Edit Booking</a>
+      </div>
+    <% end %>
   </div>
+</div>
