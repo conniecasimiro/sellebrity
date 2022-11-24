@@ -1,3 +1,5 @@
+require 'open-uri'
+
 class CelebsController < ApplicationController
   def index
     @celebs = Celeb.all
@@ -8,6 +10,7 @@ class CelebsController < ApplicationController
 
   def show
     @celeb = Celeb.find(params[:id])
+    @instagram = URI.open(@celeb.instagram_url).read
   end
 
   def new
