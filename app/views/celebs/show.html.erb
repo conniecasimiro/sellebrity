@@ -7,17 +7,17 @@
             <div class="bio-text position-relative">
               <h2>Bio</h2>
               <p><%= @celeb.bio %></p>
-              <%= link_to @celeb.instagram_url, target: '_blank' do %>
-                <i class="fab fa-instagram text-primary h3"></i>
-              <% end %>
+              <div id="body">
               <h2>Service</h2>
               <p><%= @celeb.service %></p>
               <h2>Price</h2>
               <p><%= @celeb.price %>£/h</p>
-              <a><%= link_to "Book this celebrity", new_celeb_booking_path(@celeb), class: "btn btn-flat bottom-0 end-0 position-absolute" %>
-              </a>
+              <a><%= link_to "Book this celebrity", new_celeb_booking_path(@celeb), class: "btn btn-flat bottom-0 end-0 position-absolute" %></a>
+                <%= link_to @celeb.instagram_url, target: '_blank', id: "instagram" do %>
+                  <i class="fab fa-instagram"></i>
+                  <% end %>
+              </div>
             </div>
-
         </div>
     </div>
   </div>
