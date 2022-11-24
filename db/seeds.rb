@@ -276,3 +276,47 @@ Celeb.create!(
   price:  rand(250..50000),
   user_id: user4.id
 )
+
+Celeb.create!(
+  first_name: "Donald",
+  last_name:  "Trump",
+  service:  "Orange man, politician",
+  bio:  "Donald John Trump is an American politician, media personality, and businessman who served as the 45th president of the United States from 2017 to 2021. Trump graduated from the Wharton School of the University of Pennsylvania with a bachelor's degree in 1968.",
+  photo_url:  "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Donald_Trump_official_portrait.jpg/440px-Donald_Trump_official_portrait.jpg",
+  instagram_url: "https://www.instagram.com/realdonaldtrump/?hl=en",
+  price:  rand(250..50000),
+  user_id: user4.id
+)
+
+Celeb.create!(
+  first_name: "Kris",
+  last_name:  "Jenner",
+  service:  "Media personality, businesswoman, socialite",
+  bio:  "Kristen Mary Jenner is an American media personality, socialite, and businesswoman. She rose to fame starring in the reality television series Keeping Up with the Kardashians.",
+  photo_url:  "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Kris_Jenner_shot_by_Jim_Jordan_at_White_Cross_Studios_%28cropped%29.jpg/440px-Kris_Jenner_shot_by_Jim_Jordan_at_White_Cross_Studios_%28cropped%29.jpg",
+  instagram_url: "https://www.instagram.com/krisjenner/?hl=en",
+  price:  rand(250..50000),
+  user_id: user4.id
+)
+
+Celeb.create!(
+  first_name: "Jennifer",
+  last_name:  "Aniston",
+  service:  "Actor, film producer",
+  bio:  "Jennifer Joanna Aniston is an American actress and film producer. She is the recipient of various accolades, including a Primetime Emmy Award, a Golden Globe Award and two Screen Actors Guild Awards. Since her career progressed in the 1990s, she has become one of the world's highest-paid actresses.",
+  photo_url:  "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/JenniferAnistonFeb09.jpg/440px-JenniferAnistonFeb09.jpg",
+  instagram_url: "https://www.instagram.com/jenniferaniston/",
+  price:  rand(250..50000),
+  user_id: user4.id
+)
+
+Celeb.create!(
+  first_name: "Jennifer",
+  last_name:  "Lawrence",
+  service:  "Actor",
+  bio:  "Jennifer Shrader Lawrence is an American actress. The world's highest-paid actress in 2015 and 2016, her films have grossed over $6 billion worldwide to date. She appeared in Time's 100 most influential people in the world list in 2013 and the Forbes Celebrity 100 list from 2013 to 2016.",
+  photo_url:  "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Jennifer_Lawrence_in_2016.jpg/440px-Jennifer_Lawrence_in_2016.jpg",
+  instagram_url: "https://www.instagram.com/jenniferlawrence_/?hl=en",
+  price:  rand(250..50000),
+  user_id: user4.id
+)

@@ -8,6 +8,14 @@ class CelebsController < ApplicationController
     end
   end
 
+  def index2
+    @celebs = Celeb.all
+  end
+
+  def index3
+    @celebs = Celeb.all
+  end
+
   def show
     @celeb = Celeb.find(params[:id])
     @instagram = URI.open(@celeb.instagram_url).read
