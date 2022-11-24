@@ -13,8 +13,14 @@ class UsersController < ApplicationController
   end
 
   def decline
+    booking = Booking.find(params[:id])
+    booking.destroy
+    redirect_to users_celebs_path, status: :see_other
   end
 
   def accept
+    booking = Booking.find(params[:id])
+    booking.accepted = true
+    redirect_to users_celebs_path, status: :see_other
   end
 end

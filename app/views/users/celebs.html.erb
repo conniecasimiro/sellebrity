@@ -23,9 +23,9 @@
             <div class="requests">
               <p><%= booking.booking_date %></p>
               <p>by <%= booking.user.first_name %> <%= booking.user.last_name %></p>
-              <% if booking.accepted = "false" %>
-                <a><%= link_to "Accept", users_celebs_path(), class: "btn btn-flat end-0" %></a>
-                <a><%= link_to "Decline", users_celebs_path(), class: "btn btn-flat bg-secondary end-0" %></a>
+              <% unless booking.accepted %>
+                <a><%= link_to "Accept", accept_path(booking), data: {turbo_method: :post}, class: "btn btn-flat end-0" %></a>
+                <a><%= link_to "Decline", decline_path(booking), data: {turbo_method: :delete},class: "btn btn-flat bg-secondary end-0" %></a>
               <% else %>
                 <p><%= booking.booking_date %></p>
               <% end %>
