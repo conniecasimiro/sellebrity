@@ -4,7 +4,7 @@
       <% @celebs.each do |celeb| %>
         <%= link_to celeb_path(celeb), style: "text-decoration: none; color: black;" do %>
           <div class="card-product" >
-            <img src="<%=celeb.photo_url%>" width="500" height="600"/>
+            <img src="<%=celeb.photo_url%>" width="500" height="600">
             <div class="card-product-infos">
               <h2><%= celeb.first_name %> <%= celeb.last_name %></h2>
               <div class="d-flex justify-content-between">
