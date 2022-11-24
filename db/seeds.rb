@@ -22,7 +22,7 @@ user1.save!
 Celeb.create!(
   first_name: "Taylor",
   last_name:  "Swift",
-  service:  "Singer-songwriter, Musician, Actor",
+  service:  "Singer, Songwriter, Musician, Actor",
   bio:  "Taylor Alison Swift (born December 13, 1989) is an American singer-songwriter. Her discography spans multiple genres and her narrative songwriting—often inspired by her personal life—has received critical praise and widespread media coverage. Born in West Reading, Pennsylvania, Swift moved to Nashville, Tennessee, at age 14 to become a country artist. She signed a songwriting deal with Sony/ATV Music Publishing in 2004 and a recording contract with Big Machine Records in 2005. Her 2006 self-titled debut album made her the first female country singer to write or co-write a US platinum-certified album entirely.",
   photo_url:  "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/191125_Taylor_Swift_at_the_2019_American_Music_Awards_%28cropped%29.png/440px-191125_Taylor_Swift_at_the_2019_American_Music_Awards_%28cropped%29.png",
   price:  rand(250..50000),
@@ -71,7 +71,7 @@ user2.save!
 Celeb.create!(
   first_name: "Miley",
   last_name:  "Cyrus",
-  service:  "Actor, Singer-songwriter, Dancer",
+  service:  "Actor, Singer, Songwriter, Dancer",
   bio:  "Miley Ray Cyrus (born Destiny Hope Cyrus on November 23, 1992) is an American singer, songwriter, and actress. Known for her distinctive raspy voice, her music incorporates elements of varied styles and genres, including pop, country pop, hip hop, experimental, and rock. She has attained the most US Billboard 200 top-five albums in the 21st century by a female artist, with a total of thirteen entries.",
   photo_url:  "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Miley_Cyrus_Primavera19_-226_%2848986293772%29_%28cropped%29.jpg/440px-Miley_Cyrus_Primavera19_-226_%2848986293772%29_%28cropped%29.jpg",
   price:  rand(250..50000),

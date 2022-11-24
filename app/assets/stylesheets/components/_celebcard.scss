@@ -6,7 +6,7 @@
 
 .card-product {
   width: 272px;
-  height: 353px;
+  height: 380px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   align-items: center;
@@ -26,15 +26,15 @@
 .card-product h2 {
   font-size: 16px;
   font-weight: bold;
-  margin: 0;
+  margin-bottom: 6px;
 }
 
 .card-product p {
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .card-product .card-product-infos {
@@ -43,4 +43,25 @@
 
 .card-product-infos a {
   text-decoration: none;
+}
+
+.celebservice {
+  --bs-badge-padding-x: 0.55em;
+  --bs-badge-padding-y: 0.25em;
+  --bs-badge-border-radius: 2px;
+  display: inline-block;
+  padding: var(--bs-badge-padding-y) var(--bs-badge-padding-x);
+  font-size: 10px;
+  font-weight: var(--bs-badge-font-weight);
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  color: rgb(41, 41, 41) !important;
+  background-color: rgb(234, 234, 234) !important;
+  border-radius: var(--bs-border-radius-pill)
+}
+
+.celebprice {
+  margin-top: 6px;
 }
