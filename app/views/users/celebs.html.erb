@@ -3,6 +3,7 @@
     <h1 class="m-5">My SELLEBRITIES</h1>
     <a><%= link_to "New Celebrity", new_celeb_path, class: "btn btn-flat"%></a>
   </div>
+  <% if @celebs.present? %>
     <% @celebs.each do |celeb| %>
     <div class="rows bg-white">
       <%= link_to celeb_path(celeb), style: "text-decoration: none; color: black;" do %>
@@ -48,5 +49,10 @@
           <% end %>
         </div>
       </div>
+    <% end %>
+  <% else %>
+    <div class="no-celebs">
+      <h1>Wow! You have no celebrities.. Go make one.</h1>
+    </div>
   <% end %>
 </div>

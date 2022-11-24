@@ -72,3 +72,13 @@
   margin-top: 13px;
   margin-bottom: 13px;
 }
+.no-celebs{
+  height: 40vh;
+  // width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    display: flex;
+  }
+}
