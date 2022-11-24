@@ -32,17 +32,25 @@
     <div class="cards d-flex justify-content-between align-items-center">
       <% @featured.each do |celeb| %>
           <%= link_to celeb_path(celeb), style: "text-decoration: none; color: black;" do %>
-            <div class="card-product" >
-              <img src="<%=celeb.photo_url%>" width="500" height="600"/>
-              <div class="card-product-infos">
-                <h2><%= celeb.first_name %> <%= celeb.last_name %></h2>
-                <div class="d-flex justify-content-between">
-                  <p ><%= celeb.service %></p>
+          <div class="card-product" >
+            <img src="<%=celeb.photo_url%>" width="500" height="600"/>
+            <div class="card-product-infos">
+              <h2><%= celeb.first_name %> <%= celeb.last_name %></h2>
+              <div class="d-flex justify-content-between">
+                <div class="w-80">
+                  <% celeb.service.split(",").each do |word| %>
+                    <div class= "celebservice">
+                      <p><%= word.gsub("and", "").strip.capitalize %></p>
+                    </div>
+                  <% end %>
+                </div>
+                <div class="celebprice">
                   <p><strong><%= celeb.price %></strong>£/h</p>
                 </div>
               </div>
             </div>
-          <% end %>
+          </div>
+        <% end %>
       <% end %>
     </div>
     <a><%= link_to "All celebrities", celebs_path, class: "btn btn-flat position-absolute end-0 my-4" %></a>
