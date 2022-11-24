@@ -10,6 +10,7 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   align-items: center;
+  border-radius: 5px;
 }
 
 .card-product img {
@@ -21,6 +22,8 @@
   top: 0%;
   bottom: 22.22%;
   object-fit: cover;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 }
 
 .card-product h2 {
