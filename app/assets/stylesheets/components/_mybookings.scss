@@ -10,8 +10,9 @@
 }
 
 .cards-booking {
-  height: 220px;
+  height: 280px;
   background: white;
+  border-radius: 5px;
   padding: 10px;
   margin: 0 auto;
   position: relative;
@@ -21,9 +22,14 @@
     position: absolute;
     bottom: 10px;
     right: 10px;
-    background-color: black;
+    border-radius: 4px;
+    background: #000000ce;
+    transition: background 0.3s ease;
     border: black;
-    border-radius: 2px;
+  }
+  a:hover {
+      background: #000000;
+      color: white;
   }
 }
 .card-info-booking {
@@ -41,13 +47,13 @@
 }
 
 .cards-booking img {
-height: 200px;
-width: 210px;
+height: 260px;
+width: 200px;
+border-radius: 2px;
 }
 
-.cards-booking  {
-  a:hover {
-    background-color: grey;
-    transition: 1s;
-  }
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+
 }
