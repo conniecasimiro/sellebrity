@@ -7,6 +7,9 @@
             <div class="bio-text position-relative">
               <h2>Bio</h2>
               <p><%= @celeb.bio %></p>
+              <%= link_to @celeb.instagram_url, target: '_blank' do %>
+                <i class="fab fa-instagram text-primary h3"></i>
+              <% end %>
               <h2>Service</h2>
               <p><%= @celeb.service %></p>
               <h2>Price</h2>
