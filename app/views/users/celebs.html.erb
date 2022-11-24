@@ -20,15 +20,24 @@
       <% bookings = Booking.where(celeb: celeb)  %>
         <div class="column">
           <% bookings.each do |booking| %>
-            <div class="requests">
-              <p><%= booking.booking_date %></p>
-              <p>by <%= booking.user.first_name %> <%= booking.user.last_name %></p>
-              <% unless booking.accepted %>
-                <a><%= link_to "Accept", accept_path(booking), data: {turbo_method: :post}, class: "btn btn-flat end-0" %></a>
-                <a><%= link_to "Decline", decline_path(booking), data: {turbo_method: :delete},class: "btn btn-flat bg-secondary end-0" %></a>
-              <% else %>
-                <p><%= booking.booking_date %></p>
-              <% end %>
+            <div class="booking">
+              <div class="requests rounded-top">
+                <div class="request-start">
+                  <p>From: <%=booking.user.first_name.capitalize%></p>
+                  <p>On: <%=booking.booking_date.strftime("%m/%d/%Y") %> At: <%=booking.booking_date.strftime("%I:%M%p") %> For:<%=booking.duration%> hours</p>
+                </div>
+                <div class="request-end">
+                  <% unless booking.accepted %>
+                    <a><%= link_to "Accept", accept_path(booking), data: {turbo_method: :post}, class: "btn btn-flat end-0" %></a>
+                    <a><%= link_to "Decline", decline_path(booking), data: {turbo_method: :delete},class: "btn btn-flat bg-secondary end-0" %></a>
+                  <% else %>
+                    <p> <strong>Booking Accepted!</strong></p>
+                  <% end %>
+                </div>
+              </div>
+              <div class="description rounded-bottom">
+                <P>Description: <%=booking.description%></P>
+              </div>
             </div>
           <% end %>
         </div>

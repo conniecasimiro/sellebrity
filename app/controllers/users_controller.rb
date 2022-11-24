@@ -21,6 +21,7 @@ class UsersController < ApplicationController
   def accept
     booking = Booking.find(params[:id])
     booking.accepted = true
+    booking.save
     redirect_to users_celebs_path, status: :see_other
   end
 end
