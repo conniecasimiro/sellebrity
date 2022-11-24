@@ -23,3 +23,39 @@
   background: #3e3e3ece;
   color: white;
 }
+
+.page-item {
+  color: white;
+  padding: 8px 14px;
+  background: rgb(214, 214, 214);
+  transition: background 0.3s ease;
+  a {
+    text-decoration: none;
+  }
+  border: solid rgb(193, 193, 193);
+  border-width: 1px;
+  border-left: none;
+
+}
+
+.page-item:hover {
+  background: rgb(185, 185, 185);
+  color: white;
+}
+
+#corner-left {
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  border-left: solid rgb(193, 193, 193);
+  border-left-width: 1px;
+}
+
+#corner-right {
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.pages li{
+  display:inline;
+  list-style: none;
+}

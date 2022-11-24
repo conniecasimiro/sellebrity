@@ -1,7 +1,7 @@
   <div class="container mt-4 mb-3">
     <h1 class="m-5 text-center">SELLEBRITIES</h1>
     <div class="cards">
-      <% @celebs[0..11].each do |celeb| %>
+      <% @celebs[24..35].each do |celeb| %>
         <%= link_to celeb_path(celeb), style: "text-decoration: none; color: black;" do %>
           <div class="card-product" >
             <img src="<%=celeb.photo_url%>" width="500" height="600"/>
@@ -29,7 +29,7 @@
     <div class="pages nav">
       <ul class="pages">
         <li class="page-item" id="corner-left">
-          <a><%= link_to "<", celebs_path %></a>
+          <a><%= link_to "<", celebs2_path %></a>
         </li>
         <li class="page-item">
           <a><%= link_to "1", celebs_path %></a>
@@ -41,7 +41,7 @@
           <a><%= link_to "3", celebs3_path %></a>
         </li>
         <li class="page-item" id="corner-right">
-          <a><%= link_to ">", celebs2_path %></a>
+          <a><%= link_to ">", celebs3_path %></a>
         </li>
       </ul>
     </div>
