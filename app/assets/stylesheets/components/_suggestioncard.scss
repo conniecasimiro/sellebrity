@@ -1,0 +1,24 @@
+.suggestion {
+  img {
+  height: 140px;
+  width: 170px;
+  position: relative;
+  left: 0%;
+  right: 2.85%;
+  top: 0%;
+  bottom: 22.22%;
+  object-fit: cover;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  }
+  p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+    font-size: 16px;
+  }
+  margin: 0px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+}
