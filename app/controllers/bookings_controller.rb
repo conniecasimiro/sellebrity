@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
   def index
+
     @celeb = Celeb.find(params[:celeb_id])
     @bookings = Booking.where(celeb_id: @celeb.id)
     # if @bookings.empty?
@@ -25,6 +26,25 @@ class BookingsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def edit
+    @celeb = Celeb.find(params[:id])
+  end
+
+  def update
+    @celeb = Celeb.find(params[:id])
+    @booking.celeb = Booking.update(params[bookings_params])
+
+    redirect_to booking_path(@booking)
+  end
+
+  def destroy
+    # @booking = Celeb.find(params[:id])
+    # @booking.celeb.destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to mybookings_path, status: :see_other
   end
 
   private
