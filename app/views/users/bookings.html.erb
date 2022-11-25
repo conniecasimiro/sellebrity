@@ -23,17 +23,27 @@
             </div>
           </div>
         </div>
-        <div class="column">
-          <% celeb.bookings.each do |booking| %>
-            <div class="booking">
-              <div class="requests">
-                <div class="request-start">
-                  <p><%=booking.booking_date.strftime("%m/%d/%Y") %></p>  <p>At: <%=booking.booking_date.strftime("%I:%M%p") %></p>
+        <div class="h-100 w-100">
+          <div class="column">
+            <% celeb.bookings.each do |booking| %>
+              <div class="booking">
+                <div class="requests">
+                  <div class="request-start">
+                    <p><%=booking.booking_date.strftime("%m/%d/%Y") %></p>  <p>At: <%=booking.booking_date.strftime("%I:%M%p") %></p>
+                  </div>
+                  <div class="request-end">
+                    <p>Duration: <%=booking.duration%> hours</p>
+                  </div>
                 </div>
-                <div class="request-end">
-                  <p>Duration: <%=booking.duration%> hours</p>
+                <div class="description">
+                  <p>Message: <%=booking.description%></p>
+                  <%=link_to booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-outline-warning bottom-1 end-1 " do %>
+                    <i class="fa-solid fa-trash"></i>
+                  <% end %>
                 </div>
               </div>
+            <% end %>
+          </div>
               <div class="description">
                 <p>Message: <%=booking.description%></p>
               </div>
