@@ -42,6 +42,7 @@ class BookingsController < ApplicationController
   def destroy
     # @booking = Celeb.find(params[:id])
     # @booking.celeb.destroy
+
     @booking = Booking.find(params[:id])
     @booking.destroy
     redirect_to mybookings_path, status: :see_other
