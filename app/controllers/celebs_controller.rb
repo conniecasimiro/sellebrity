@@ -19,6 +19,12 @@ class CelebsController < ApplicationController
   def show
     @celeb = Celeb.find(params[:id])
     # @instagram = URI.open(@celeb.instagram_url).read
+    # @suggestions = Celeb.where(service: @celeb.service)
+    # raise
+    @suggestions = []
+    @celeb.service.split(",").each do |word|
+      @suggestions << Celeb.search_service(word.gsub("and", "").strip.capitalize)
+    end
   end
 
   def new
