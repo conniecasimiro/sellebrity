@@ -12,10 +12,18 @@
         <img src="<%=celeb.photo_url%>" width="500" height="600"/>
         <div class="card-product-infos">
           <h2><%= celeb.first_name %> <%= celeb.last_name %></h2>
-          <div class="d-flex justify-content-between">
-            <p ><%= celeb.service %></p>
-            <p><strong><%= celeb.price %></strong>£/h</p>
-          </div>
+              <div class="d-flex justify-content-between">
+                <div class="w-80">
+                  <% celeb.service.split(",").each do |word| %>
+                    <div class= "celebservice">
+                      <p><%= word.gsub("and", "").strip.capitalize %></p>
+                    </div>
+                  <% end %>
+                </div>
+                <div class="celebprice">
+                  <p><strong><%= celeb.price %></strong>£/h</p>
+                </div>
+              </div>
         </div>
       </div>
       <% end %>
