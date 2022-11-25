@@ -18,6 +18,8 @@
   background-color: rgb(222, 222, 222);
   justify-content: space-between;
   align-items: center;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
   p {
     margin-bottom: 0px;
     margin-left: 13px;
@@ -40,6 +42,8 @@
   a {
     margin-right: 14px;
   }
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 .booking {
   height: 84px;
@@ -47,12 +51,14 @@
   margin-right: 14px;
   margin-top: 14px;
   margin-bottom: 14px;
+  margin-left: 14px;
 }
 .request-start {
   display: flex;
 }
 .request-end {
   display: flex;
+
   p {
     margin-bottom: 0px;
     margin-right: 14px;
@@ -84,7 +90,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  direction: column;
   h1 {
     display: flex;
   }
+}
+
+.center{
+  margin: 0 auto;
 }
