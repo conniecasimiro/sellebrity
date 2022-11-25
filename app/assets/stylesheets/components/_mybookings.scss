@@ -12,8 +12,6 @@
 .cards-booking {
   height: 280px;
   background: white;
-  border-radius: 5px;
-  padding: 10px;
   margin: 0 auto;
   position: relative;
   box-shadow: 0px 0px 8px 0px #888888;
@@ -44,12 +42,14 @@
   p {
     font-size: 20;
   }
+  h2 {
+    margin-top: 10px;
+  }
 }
 
 .cards-booking img {
-height: 260px;
-width: 200px;
-border-radius: 2px;
+height: 280px;
+width: 250px;
 }
 
 .btn-flat {
