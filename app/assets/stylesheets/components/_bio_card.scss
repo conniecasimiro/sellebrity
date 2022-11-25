@@ -19,7 +19,7 @@
 }
 
 .bio-text {
-  width: 75%;
+  width: 60%;
   max-height: 100%;
 }
 
@@ -32,4 +32,15 @@
 
 .show-price {
   font-size: 20px;
+}
+
+.bio-text2 {
+  width: 15%;
+  max-height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 0px 0px;
+  p {
+    margin-bottom: 0px;
+  }
 }

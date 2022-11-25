@@ -21,4 +21,10 @@ class Celeb < ApplicationRecord
     using: {
       tsearch: { prefix: true } # <-- now `superman batm` will return something!
     }
+
+  pg_search_scope :search_service,
+    against: [ :service ],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
 end
