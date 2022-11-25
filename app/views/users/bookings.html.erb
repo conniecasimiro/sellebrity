@@ -42,16 +42,12 @@
                   <% end %>
                 </div>
               </div>
-            <% end %>
-          </div>
-              <div class="description">
-                <p>Message: <%=booking.description%></p>
-              </div>
-            </div>
             <div class="book-again new-css">
               <a><%= link_to "Book this celebrity again!", new_celeb_booking_path(booking.celeb), class: "btn btn-flat center"%></a>
             </div>
-          <% end %>
+            <% end %>
+          </div>
+            </div>
         </div>
       </div>
     <% end %>
