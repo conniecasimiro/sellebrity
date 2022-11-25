@@ -2,23 +2,29 @@
   <div class="bio-card">
     <div class="inner-card">
       <h1><%= @celeb.first_name %> <%= @celeb.last_name %></h1>
-        <div class="inner-row">
-          <img class="bio-image" src="<%= @celeb.photo_url %>" alt="Card image cap">
-            <div class="bio-text position-relative">
-              <h2>Bio</h2>
-              <p><%= @celeb.bio %></p>
-              <div id="body">
+      <div class="inner-row">
+        <img class="bio-image" src="<%= @celeb.photo_url %>" alt="Card image cap">
+        <div class="bio-text position-relative">
+          <h2>Bio</h2>
+          <p><%= @celeb.bio %></p>
+            <div id="body">
               <h2>Service</h2>
-              <p><%= @celeb.service %></p>
-              <h2>Price</h2>
-              <p><%= @celeb.price %>£/h</p>
-              <a><%= link_to "Book this celebrity", new_celeb_booking_path(@celeb), class: "btn btn-flat bottom-0 end-0 position-absolute" %></a>
-                <%= link_to @celeb.instagram_url, target: '_blank', id: "instagram" do %>
-                  <i class="fab fa-instagram"></i>
-              <% end %>
+              <div class="w-80 d-flex align-items-center mb-3">
+                <% @celeb.service.split(",").each do |word| %>
+                  <div class= "celebservice2">
+                    <p><%= word.gsub("and", "").strip.capitalize %></p>
+                  </div>
+                <% end %>
               </div>
+              <h2>Price</h2>
+              <p id="show-price"><strong><%= @celeb.price %></strong>£/h</p>
+              <a><%= link_to "Book #{@celeb.first_name}!", new_celeb_booking_path(@celeb), class: "btn btn-flat bottom-0 end-0 position-absolute" %></a>
+              <%= link_to @celeb.instagram_url, target: '_blank', id: "instagram" do %>
+                <i class="fab fa-instagram"></i>
+              <% end %>
             </div>
         </div>
+      </div>
     </div>
   </div>
 </div>

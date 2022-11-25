@@ -5,10 +5,16 @@
   background-color: black;
   color: goldenrod;
   position: absolute;
+  padding: 20px;
+}
+
+.footer-links a {
+  margin: 5px;
 }
 
 a {
   color: white;
+  font-size: 20px;
 }
 
 a:hover {
