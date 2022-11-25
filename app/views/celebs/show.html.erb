@@ -27,11 +27,13 @@
         <div class="bio-text2">
           <p> Similar Celebrities </p>
           <% @suggestions.flatten.uniq.shuffle[0..2].each do |celeb|%>
-            <%= link_to celeb_path(celeb), style: "text-decoration: none; color: black;" do %>
-              <div class="suggestion">
-                <img class="bio-image" src="<%= celeb.photo_url %>" alt="Card image cap">
-                <p><%= celeb.first_name %> <%= celeb.last_name %></p>
-              </div>
+            <% unless celeb == @celeb %>
+              <%= link_to celeb_path(celeb), style: "text-decoration: none; color: black;" do %>
+                <div class="suggestion">
+                  <img class="bio-image" src="<%= celeb.photo_url %>" alt="Card image cap">
+                  <p><%= celeb.first_name %> <%= celeb.last_name %></p>
+                </div>
+              <% end %>
             <% end %>
           <% end %>
         </div>
