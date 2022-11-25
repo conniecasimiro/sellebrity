@@ -55,7 +55,10 @@
   border-top-right-radius: 4px;
 }
 
-.pages li{
-  display:inline;
-  list-style: none;
+.pages {
+  margin-top: 10px;
+  li{
+    display:inline;
+    list-style: none;
+  }
 }
