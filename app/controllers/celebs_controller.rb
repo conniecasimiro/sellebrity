@@ -18,7 +18,7 @@ class CelebsController < ApplicationController
 
   def show
     @celeb = Celeb.find(params[:id])
-    @instagram = URI.open(@celeb.instagram_url).read
+    # @instagram = URI.open(@celeb.instagram_url).read
   end
 
   def new
