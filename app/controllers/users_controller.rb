@@ -10,7 +10,6 @@ class UsersController < ApplicationController
 
   def bookings
     @celebs = Celeb.where(user_id: current_user)
-    @user_bookings = Booking.where(user_id: current_user)
     @bookings = Booking.where(user_id: current_user)
     uniq_celebs = @bookings.uniq.pluck(:celeb_id).uniq
     @bookings = Celeb.where(id: uniq_celebs)
