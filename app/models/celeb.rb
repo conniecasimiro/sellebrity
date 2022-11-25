@@ -9,7 +9,7 @@ class Celeb < ApplicationRecord
   validates :bio, presence: true
   validates :photo_url, presence: true
   validates :photo_url, format: { with: /(https?:\/\/)?([\w\-])+\.{1}([a-zA-Z]{2,63})([\/\w-]*)*\/?\??([^#\n\r]*)?#?([^\n\r]*)/,
-  message: "Must be a valid instagram" }
+  message: "Must be a valid photo" }
   validates :instagram_url, presence: true
   validates :instagram_url, format: { with: /(https?:\/\/)?([\w\-])+\.{1}([a-zA-Z]{2,63})([\/\w-]*)*\/?\??([^#\n\r]*)?#?([^\n\r]*)/,
     message: "Must be a valid instagram" }

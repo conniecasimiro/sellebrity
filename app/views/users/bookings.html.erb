@@ -1,22 +1,43 @@
-<div class="container">
-  <div class="container-booking">
-  <h1 class="m-5 text-center">My Bookings</h1>
-    <% @bookings.each do |booking| %>
-      <div class="cards-booking">
-        <div class="card-info-booking">
-          <img src=<%=booking.celeb.photo_url%>>
-          <div class="cards-book">
-            <h2><%= booking.celeb.first_name %> <%= booking.celeb.last_name %></h2>
-            <h5> Date </h5>
-            <p><%= booking.booking_date %></p>
-            <h5> Duration</h5>
-            <p> <%= booking.duration %> hours</p>
-            <h5> Description </h5>
-            <p><%= booking.description %></p>
+<div class="container mt-4 mb-3">
+  <div class="d-flex justify-content-between align-items-center">
+    <h1 class="m-5">My Bookings</h1>
+  </div>
+  <% if @bookings.present? %>
+    <% @bookings.each do |celeb| %>
+      <div class="rows bg-white">
+        <div class="card-product" >
+          <img src="<%=celeb.photo_url%>" width="500" height="600"/>
+          <div class="card-product-infos">
+            <h2><%= celeb.first_name %> <%= celeb.last_name %></h2>
+            <div class="d-flex justify-content-between">
+              <p ><%= celeb.service %></p>
+              <p><strong><%= celeb.price %></strong>£/h</p>
+            </div>
           </div>
         </div>
-            <a> <%= link_to "Delete Booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-dark btn-outline-danger bottom-1 end-1 position-absolute"%></a>
+        <div class="column">
+          <% celeb.bookings.each do |booking| %>
+            <div class="booking">
+              <div class="requests">
+                <div class="request-start">
+                  <p><%=booking.booking_date.strftime("%m/%d/%Y") %></p>  <p>At: <%=booking.booking_date.strftime("%I:%M%p") %></p>
+                </div>
+                <div class="request-end">
+                  <p>Duration: <%=booking.duration%> hours</p>
+                </div>
+              </div>
+              <div class="description">
+                <p>Message: <%=booking.description%></p>
+              </div>
+            </div>
+          <% end %>
+        </div>
       </div>
     <% end %>
-  </div>
+  <% else %>
+    <div class="m-5">
+      <h1>Wow! You have no bookings.. Go make one.</h1>
+      <a><%= link_to "Book your first celebrity!", new_celeb_path, class: "btn btn-flat center"%></a>
+    </div>
+  <% end %>
 </div>
