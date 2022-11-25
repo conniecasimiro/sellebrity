@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get "home", to: "pages#home"
   resources :celebs do
-    resources :bookings
+    resources :bookings, except: :destroy
   end
+  resources :bookings, only: :destroy
   get '/mybookings', to: 'users#bookings'
   get "users/celebs", to: "users#celebs"
   post "users/celebs/:id", to: "users#accept", as: :accept

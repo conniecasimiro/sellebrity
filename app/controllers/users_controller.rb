@@ -25,8 +25,19 @@ class UsersController < ApplicationController
     redirect_to users_celebs_path, status: :see_other
   end
 
- def destroy
+  # def edit
+  #   @celeb = Celeb.find(params[:id])
+  # end
 
- end
+  # def update
+  #   @celeb = Celeb.find(params[:id])
+  #   @booking.celeb = Booking.update(params[bookings_params])
 
+  #   redirect_to booking_path(@booking)
+  # end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+  end
 end
