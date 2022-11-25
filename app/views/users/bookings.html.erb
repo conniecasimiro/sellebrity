@@ -15,7 +15,7 @@
             <p><%= booking.description %></p>
           </div>
         </div>
-            <a> <%= link_to "Delete Booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-dark btn-outline-danger bottom-1 end-1 position-absolute"%></a>
+            <a> <%= link_to "Cancel Booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-dark btn-outline-danger bottom-1 end-1 position-absolute"%></a>
       </div>
     <% end %>
   </div>
