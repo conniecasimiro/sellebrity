@@ -12,7 +12,7 @@
             <p> Booking description: <%= booking.description %></p>
           </div>
         </div>
-        <a id="ed-button" href="#" class="btn btn-primary">Edit Booking</a>
+            <a> <%= link_to "Delete Booking", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-primary bottom-0 end-0 position-absolute"%></a>
       </div>
     <% end %>
   </div>
