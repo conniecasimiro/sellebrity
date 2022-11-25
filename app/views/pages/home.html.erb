@@ -37,7 +37,7 @@
             <div class="card-product-infos">
               <h2><%= celeb.first_name %> <%= celeb.last_name %></h2>
               <div class="d-flex justify-content-between">
-                <div class="w-80">
+                <div class="w-80 flex-wrap">
                   <% celeb.service.split(",").each do |word| %>
                     <div class= "celebservice">
                       <p><%= word.gsub("and", "").strip.capitalize %></p>
