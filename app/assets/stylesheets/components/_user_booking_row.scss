@@ -10,6 +10,11 @@
   position: absolute;
   top: 18px;
   left: 237px;
+  box-shadow: 4 4 15px rgba(0, 0, 0, 0.737);
+  color: #c25f6a;
+  &:hover {
+    color:rgb(22, 22, 22);
+}
 }
 .requests {
   display: flex;
@@ -71,18 +76,23 @@
 }
 .no-bookings {
   display: flex;
-  color: white;
+  color: rgb(0, 0, 0);
   align-items: center;
 }
 .unpopular{
   display: flex;
   height: 92%;
-  background-color: black;
+  background-color: rgb(207, 207, 207);
   justify-content: center;
   margin-right: 13px;
   margin-top: 13px;
   margin-bottom: 13px;
   margin-left: 13px;
+}
+.new-css{
+  display: flex;
+  margin-top: 25px;
+
 }
 .no-celebs{
   height: 40vh;
